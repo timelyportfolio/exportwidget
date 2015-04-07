@@ -1,0 +1,10 @@
+Package: exportwidget
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1
+Date: 2015-04-07
+Author: Your name goes here
+Maintainer: Kent Russell <kent.russell@timelyportfolio.com>
+Description: More about what it does (maybe more than one line)
+License: What license is it under?
+LazyData: TRUE
