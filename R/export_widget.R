@@ -1,7 +1,11 @@
 #' Export a htmlwidget SVG as PNG
 #'
 #' Often we want to export a SVG htmlwidget as a static PNG.  This little helper
-#' widget will add a button on your widget to do just this.
+#' widget will add a button on your widget to perform this export task.
+#'
+#' @param selector \code{string} a valid CSS selector of the element that we would like to export.
+#'            If \code{selector} is \code{NULL}, then \code{export_widget}
+#'            will select all \code{htmlwidgets} on the page.
 #'
 #' @import htmlwidgets
 #'
