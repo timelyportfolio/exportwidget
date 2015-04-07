@@ -33,6 +33,7 @@ tagList(
     )
   )) %>>%
   html_print( viewer = utils::browseURL ) #export not working in RStudio Viewer
+
 ```
 
 ### Example with an htmlwidget | DiagrammeR
