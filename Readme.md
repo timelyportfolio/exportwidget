@@ -1,6 +1,6 @@
 # exportwidget - htmlwidget to export htmlwidgets
 
-This is **pre-alpha and experimental** but should work.
+This is **pre-alpha and experimental** but should work.  **Note, this currently does not work in RStudio Viewer**.
 
 
 ### Install
