@@ -32,7 +32,7 @@ tagList(
       ,stylesheet = ""
     )
   )) %>>%
-  html_print
+) %>>% html_print( viewer = utils::browseURL ) #export not working in RStudio Viewer
 ```
 
 ### Example with an htmlwidget | DiagrammeR
@@ -46,7 +46,7 @@ library(exportwidget)
 tagList(
   grViz(" digraph { a->b; b->c; c->a; }")
   ,export_widget( )
-) %>>% html_print
+) %>>% html_print( viewer = utils::browseURL ) #export not working in RStudio Viewer
 ```
 
 
@@ -57,6 +57,7 @@ library(pipeR)
 library(htmltools)
 library(DiagrammeR)
 library(rcdimple)
+library(networkD3)
 library(exportwidget)
 
 tagList(
@@ -67,6 +68,14 @@ tagList(
     , groups = "cyl"
     , type = "bubble"
   )
+  ,simpleNetwork(
+    data.frame(
+      Source = c("A", "A", "A", "A", "B", "B", "C", "C", "D")
+      ,Target = c("B", "C", "D", "J", "E", "F", "G", "H", "I")
+    )
+    ,height = 400
+    ,width = 400
+  )
   ,export_widget( )
-) %>>% html_print
+) %>>% html_print( viewer = utils::browseURL ) #export not working in RStudio Viewer
 ```
