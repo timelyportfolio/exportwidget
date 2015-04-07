@@ -14,8 +14,6 @@ devtools::install_github("timelyportfolio/exportwidget")
 ```r
 library(pipeR)
 library(htmltools)
-library(DiagrammeR)
-library(rcdimple)
 library(exportwidget)
 
 tagList(
@@ -40,6 +38,11 @@ tagList(
 ### Example with an htmlwidget | DiagrammeR
 
 ```r
+library(pipeR)
+library(htmltools)
+library(DiagrammeR)
+library(exportwidget)
+
 tagList(
   grViz(" digraph { a->b; b->c; c->a; }")
   ,export_widget( )
@@ -50,6 +53,12 @@ tagList(
 ### Example with multiple htmlwidgets
 
 ```r
+library(pipeR)
+library(htmltools)
+library(DiagrammeR)
+library(rcdimple)
+library(exportwidget)
+
 tagList(
   grViz(" digraph { a->b; b->c; c->a; }")
   ,dimple(
