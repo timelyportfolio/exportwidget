@@ -6,6 +6,7 @@ HTMLWidgets.widget({
 
   // our function to export as png
   pngify: function( svg ){
+
     var cvs = document.createElement("canvas")
     cvs.width = svg.getBoundingClientRect().width
     cvs.height = svg.getBoundingClientRect().height
@@ -38,6 +39,7 @@ HTMLWidgets.widget({
 
   initialize: function(el, width, height) {
 
+    // add our function to HTMLWidgets
     if(typeof window.HTMLWidgets.pngify === "undefined")  window.HTMLWidgets.pngify = this.pngify
 
     return { };
@@ -45,6 +47,7 @@ HTMLWidgets.widget({
   },
 
   renderValue: function(el, x, instance) {
+
     var elSelect;
 
     // if a string assume it is a selector
@@ -54,22 +57,31 @@ HTMLWidgets.widget({
 
     // if nothing get all htmlwidgets
     if( typeof x.selector === "undefined" || x.selector === null ){
-      elSelect = document.querySelectorAll(".html-widget-static-bound")
+      // filter out export_widget htmlwidgets
+      elSelect = [].filter.call(
+                    document.querySelectorAll(".html-widget-static-bound"),
+                    function(e){
+                      return [].indexOf.call(e.classList,"export_widget") < 0
+                    }
+                  )
     }
 
     [].forEach.call( elSelect, function(e){
-        //don't do this for export_widget htmlwidgets
-        if( [].indexOf.call(e.classList,"export_widget") < 0 ) {
-
-          var btn = document.createElement("button")
-          btn.innerHTML = "widget as png"
-          btn.onclick = function() {
-            HTMLWidgets.pngify(
-              e.tagName === "svg" ? e : e.getElementsByTagName("svg")[0]
-            )
-          }
-          // handle placement
-          e.parentNode.insertBefore( btn, e )
+        var btn = document.createElement("button")
+        btn.innerHTML = "widget as png"
+        btn.style.position = "relative"
+        btn.style.bottom = "95%"
+        btn.style.left = "5%"
+        btn.onclick = function() {
+          HTMLWidgets.pngify(
+            e.tagName === "svg" ? e : e.getElementsByTagName("svg")[0]
+          )
+        }
+        // handle placement
+        if ( e.tagName === "svg" ) {
+          e.parentNode.appendChild( btn )
+        } else {
+          e.appendChild( btn )
         }
     })
 
