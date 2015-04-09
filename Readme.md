@@ -2,6 +2,12 @@
 
 This is **pre-alpha and experimental** but should work.  **Note, this currently does not work in RStudio Viewer**.
 
+Thanks so much to the following libraries and their authors.
+
+1. [`canvg`](https://github.com/gabelerner/canvg) from Gabe Lerner
+2. [`svg-crowbar`](https://github.com/NYTimes/svg-crowbar) from the NY Times
+3. [`Download-File-JS`](https://github.com/PixelsCommander/Download-File-JS) from Denis Radin
+
 
 ### Install
 
