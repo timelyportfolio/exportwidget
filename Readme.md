@@ -80,3 +80,28 @@ tagList(
   ,export_widget( )
 ) %>>% html_print( viewer = utils::browseURL ) #export not working in RStudio Viewer
 ```
+
+
+```r
+library(streamgraph)
+library(dplyr)
+library(exportwidget)
+library(webshot)
+
+ggplot2::movies %>%
+    select(year, Action, Animation, Comedy, Drama, Documentary, Romance, Short) %>%
+    tidyr::gather(genre, value, -year) %>%
+    group_by(year, genre) %>%
+    tally(wt=value) %>%
+    ungroup %>%
+    mutate(year=as.Date(sprintf("%d-01-01", year))) -> dat
+
+html_print(tagList(
+  streamgraph(dat, "genre", "n", "year")
+  ,export_widget( )
+)) %>%
+  normalizePath(.,winslash="/") %>%
+  gsub(x=.,pattern = ":/",replacement="://") %>%
+  paste0("file:///",.) %>%
+  webshot( file = "stream_screen.png", delay = 10 )
+```
