@@ -1,6 +1,6 @@
 # exportwidget - htmlwidget to export htmlwidgets
 
-This is **pre-alpha and experimental** but should work.  **Note, this currently does not work in RStudio Viewer**.
+This is **pre-alpha and experimental** but should work.  **Note, this currently does not work in RStudio Viewer**.  `export_widget` was the widget of the week at [Building Widgets](http://buildingwidgets.com), so you can see it in action in this [blog post](http://www.buildingwidgets.com/blog/2015/4/9/week-14-exporting-widget).
 
 Thanks so much to the following libraries and their authors.
 
