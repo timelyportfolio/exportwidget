@@ -93,8 +93,9 @@ library(streamgraph)
 library(dplyr)
 library(exportwidget)
 library(webshot)
+library(ggplot2movies)
 
-ggplot2::movies %>%
+movies %>%
     select(year, Action, Animation, Comedy, Drama, Documentary, Romance, Short) %>%
     tidyr::gather(genre, value, -year) %>%
     group_by(year, genre) %>%
