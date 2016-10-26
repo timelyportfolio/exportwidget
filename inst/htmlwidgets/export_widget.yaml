@@ -1,9 +1,9 @@
 dependencies:
   - name: Download-File-JS
     version: 1.0
-    src: htmlwidgets/Download-File-JS
+    src: htmlwidgets/lib/Download-File-JS
     script: download.js
-  - name: canvg
-    version: 1.0.0
-    src: htmlwidgets/canvg
-    script: [rgbcolor.js, canvg.js]
+  - name: fabric
+    version: 1.6.6
+    src: htmlwidgets/lib/fabric/dist
+    script: fabric.min.js

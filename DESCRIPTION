@@ -1,10 +1,35 @@
 Package: exportwidget
 Type: Package
 Title: htmlwidget to export other htmlwidgets and SVG as PNG
-Version: 0.1
-Date: 2015-04-07
-Author: Your name goes here
+Version: 0.2.0
+Date: 2016-10-26
+Authors@R: c(
+      person(
+        "Juriy", "Zaytsev"
+        , role = c("aut", "cph")
+        , comment = "fabric.js library, http://fabricjs.com"
+      ),
+      person(
+        "Andrea", "Bogazzi"
+        , role = c("aut", "cph")
+        , comment = "fabric.js library, http://fabricjs.com"
+      ),
+      person(
+        "Denis", "Radin"
+        , role = c("aut", "cph")
+        , comment = "Download-File-JS library, https://github.com/PixelsCommander/Download-File-JS"
+      ),
+      person(
+        "Kent", "Russell"
+        , role = c("aut", "cre")
+        , comment = "R interface"
+        , email = "kent.russell@timelyportfolio.com"
+      )
+    )
 Maintainer: Kent Russell <kent.russell@timelyportfolio.com>
-Description: More about what it does (maybe more than one line)
+Description: 'Webshot' works great but often we want a user
+             to be able to create a static image of an
+             'htmlwidget'.  Using 'fabricjs', 'exportwidget'
+             provides this static image export ability.
 License: MIT + file License
 LazyData: TRUE
